@@ -11,8 +11,9 @@ namespace CustomerView.Models.ViewModels
         public string Title { get; set; }
         public string Forename { get; set; }
         public string Surname { get; set; }
-        public DateTime DateOfBirth { get; set; }
+        public string DateOfBirth { get; set; }
         public string Email { get; set; }
         public string Status { get; set; }
+        public string IsMarketingAllowed { get; set; }
     }
 }

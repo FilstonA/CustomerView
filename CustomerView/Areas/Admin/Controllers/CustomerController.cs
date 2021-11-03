@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using Dapper;
 
 namespace CustomerView.Areas.Admin.Controllers
 {
@@ -44,11 +45,10 @@ namespace CustomerView.Areas.Admin.Controllers
         #region API Calls
         [HttpGet]
         public IActionResult GetAll()
-        {     
+        {
             var allObj = _uow.StoredProcs.List<CustomerViewModel>("dbo.GetCustomerDetails");
             return Json(new { data = allObj });
         }
-        
         #endregion
     }
 }

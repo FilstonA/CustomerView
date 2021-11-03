@@ -10,12 +10,13 @@ function loadDataTable() {
             "url": "/Admin/Customer/GetAll"
         },
         "columns": [
-            { "data": "title", "width": "15%" },
-            { "data": "forename", "width": "15%" },
-            { "data": "surname", "width": "15%" },
-            { "data": "dateOfBirth", "width": "15%" },
-            { "data": "email", "width": "15%" },
-            { "data": "status", "width": "15%" },
+            { "data": "title", "width": "5%" },
+            { "data": "forename", "width": "5%" },
+            { "data": "surname", "width": "5%" },
+            { "data": "dateOfBirth", "width": "10%" },
+            { "data": "email", "width": "5%" },
+            { "data": "status", "width": "5%" },
+            { "data": "isMarketingAllowed", "width": "5%" },
             {
                 "data": "id",
                 "render": function (data) {
