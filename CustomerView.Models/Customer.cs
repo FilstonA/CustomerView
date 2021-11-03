@@ -11,7 +11,7 @@ namespace CustomerView.Models
     public class Customer
     {
         [Key]
-        [Required(ErrorMessage = "Required")]
+        [Required(ErrorMessage = "The customerId field is required")]
         public int CustomerID { get; set; }
 
         [ForeignKey("Titles")]

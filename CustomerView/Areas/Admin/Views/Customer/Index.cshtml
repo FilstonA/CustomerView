@@ -1,0 +1,35 @@
+﻿
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<br />
+<div class="row">
+    <div class="col-6">
+        <h2 class="text-primary">List of Customers </h2>
+    </div>
+    <div class="col-10 text-right">
+        <a class="btn btn-primary" asp-action="Upsert"><i class="fas fa-plus"></i> &nbsp; Create a New Customer</a>
+    </div>
+</div>
+
+<br />
+<div class="p-4 border rounded bg-light">
+    <table id="tblData" class="table table-bordered" style="width:100%; color:black">
+        <thead class="thead-dark">
+            <tr class="table-info">
+                <th>Title</th>
+                <th>Forename</th>
+                <th>Surname</th>
+                <th>Date Of Birth</th>
+                <th>Email Address</th>
+                <th>Status</th>
+                <th></th>
+            </tr>
+        </thead>
+    </table>
+</div>
+
+@section Scripts{ 
+<script src="~/js/customer.js"></script>
+}

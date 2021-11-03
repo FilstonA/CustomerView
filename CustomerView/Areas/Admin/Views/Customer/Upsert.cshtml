@@ -1,0 +1,47 @@
+﻿@model CustomerView.Models.Customer
+@{
+    Layout = "~/Views/Shared/_Layout.cshtml";
+    var title = "Create Customer";
+}
+
+<form method="post">
+    <div class="row p-3 border">
+        <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+        @if (Model.CustomerID != 0)
+        {
+            title = "Edit Customer";
+        }
+        <div class="col-12 border-bottom">
+            <h2 class="text-primary">@title</h2>
+        </div>
+        <div class="col-8 pt-4">
+            <div class="form-group row">
+                <div class="col-4">
+                    <label asp-for="CustomerID"></label>
+                </div>
+                <div class="col-8">
+                    <input asp-for="CustomerID" class="form-control" />
+                    <span asp-validation-for="CustomerID" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <div class="col-8 offset-4">
+                    @if (Model.CustomerID != 0)
+                    {
+                        <partial name="_EditAndBackButton" model="Model.CustomerID" />
+                    }
+                    else
+                    {
+                        <partial name="_CreateAndBackButton" />
+                    }
+                </div>
+            </div>
+        </div>
+    </div>
+</form>
+
+@section Scripts{ 
+<partial name="_ValidationScriptsPartial" />
+}
+
+
