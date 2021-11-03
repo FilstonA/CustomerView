@@ -1,0 +1,30 @@
+USE [CustomerView]
+GO
+/****** Object:  StoredProcedure [dbo].[GetCustomerDetails]    Script Date: 03/11/2021 15:12:38 ******/
+SET ANSI_NULLS ON
+GO
+SET QUOTED_IDENTIFIER ON
+GO
+-- =============================================
+-- Author:		<Author,,Name>
+-- Create date: <Create Date,,>
+-- Description:	<Description,,>
+-- =============================================
+CREATE PROCEDURE [dbo].[GetCustomerDetails]
+
+AS
+BEGIN
+
+	SET NOCOUNT ON;
+
+	SELECT t.[Description] AS [Title],
+		   c.Forename,
+		   c.Surname,
+		   CAST(c.DateOfBirth AS DATE) AS [DateOfBirth],
+		   c.Email,
+		   s.[Description] AS [Status]
+
+	FROM dbo.Customers c
+	LEFT JOIN dbo.Statuses s ON s.StatusID = c.StatusID
+	LEFT JOIN dbo.Titles t ON t.TitleID = c.TitleID
+END
